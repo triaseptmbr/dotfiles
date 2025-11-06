@@ -2,7 +2,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug('olimorris/onedarkpro.nvim')
+Plug('craftzdog/solarized-osaka.nvim')
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim', { ['branch'] = '0.1.x' })
 Plug('nvim-lualine/lualine.nvim')
@@ -11,7 +11,7 @@ Plug('nvim-treesitter/nvim-treesitter', { ['branch'] = 'master', ['do'] = ':TSUp
 
 vim.call('plug#end')
 
-vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme solarized-osaka')
 vim.g.mapleader = ' '
 vim.opt.number = true
 vim.opt.relativenumber = true
