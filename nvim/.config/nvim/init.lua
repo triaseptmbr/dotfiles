@@ -22,6 +22,7 @@ vim.opt.expandtab = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
+vim.opt.clipboard='unnamedplus'
 
 local function set_tab_width(width)
     vim.opt_local.tabstop = width
