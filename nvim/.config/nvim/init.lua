@@ -2,7 +2,7 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 
-Plug('craftzdog/solarized-osaka.nvim')
+Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope.nvim', { ['branch'] = '0.1.x' })
 Plug('nvim-lualine/lualine.nvim')
@@ -11,7 +11,7 @@ Plug('nvim-treesitter/nvim-treesitter', { ['branch'] = 'master', ['do'] = ':TSUp
 
 vim.call('plug#end')
 
-vim.cmd('colorscheme solarized-osaka')
+vim.cmd('colorscheme catppuccin-frappe')
 vim.g.mapleader = ' '
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -22,7 +22,7 @@ vim.opt.expandtab = true
 vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
-vim.opt.clipboard='unnamedplus'
+vim.opt.clipboard = 'unnamedplus'
 
 local function set_tab_width(width)
     vim.opt_local.tabstop = width
@@ -37,20 +37,10 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 local builtin = require('telescope.builtin')
+
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
-
-require('telescope').setup({
-    defaults = {
-        layout_config = {
-            horizontal = {
-                width = 180
-            },
-            preview_width = 0.3
-        },
-    },
-})
 
 require('lualine').setup()
 
